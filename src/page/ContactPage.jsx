@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 const Contact = () => {
   return (
     <>
@@ -24,6 +25,7 @@ const Contact = () => {
           className="col-md-4 d-flex align-items-center justify-content-center bg-primary mb-4 mb-lg-0"
           style={{ height: 100 }}
         >
+          
           <div className="d-inline-flex text-left">
             <i className="fa fa-2x fa-envelope text-white m-0 mr-3" />
             <div className="d-flex flex-column">
@@ -32,6 +34,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
+        
         <div
           className="col-md-4 d-flex align-items-center justify-content-center bg-secondary mb-4 mb-lg-0"
           style={{ height: 100 }}
@@ -43,6 +46,7 @@ const Contact = () => {
               <p className="m-0 text-white">+012 345 6789</p>
             </div>
           </div>
+          
         </div>
       </div>
     </div>

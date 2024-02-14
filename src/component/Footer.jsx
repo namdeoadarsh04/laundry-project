@@ -49,7 +49,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="col-lg-3 col-md-6 mb-5">
-        <h4 className="text-white mb-4">Get In Touch</h4>
+        <h4 className="text-dark-red mb-4">Get In Touch</h4>
         <p>Dolor clita stet nonumy clita diam vero, et et ipsum diam labore</p>
         <p>
           <i className="fa fa-map-marker-alt mr-2" />
@@ -87,6 +87,12 @@ const Footer = () => {
             <i className="fa fa-angle-right mr-2" />
             Contact Us
           </Link>
+          <Link to="/Registration" className="text-white mb-2">
+            <i className="fa fa-angle-right mr-2" />
+            Registration
+          </Link>
+          
+
         </div>
       </div>
       <div className="col-lg-3 col-md-6 mb-5">
@@ -123,11 +129,11 @@ const Footer = () => {
   <div className="container-fluid bg-dark text-white py-4 px-sm-3 px-md-5">
     <p className="m-0 text-center text-white">
       ©{" "}
-      <a className="text-white font-weight-medium" href="#">
+      <a className="text-red font-weight-medium" href="#">
         GOOD BOY FOR TEAM
       </a>
       . All Rights Reserved. Designed by
-      <a className="text-white font-weight-medium" href="https://htmlcodex.com">
+      <a className="text-green font-weight-medium" href="https://htmlcodex.com">
         HTML Codex
       </a>
     </p>

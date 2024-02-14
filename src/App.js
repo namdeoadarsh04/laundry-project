@@ -16,6 +16,7 @@ import ContactPages from './page/ContactPage';
 import LoginPage from './page/loginPages';
 import PaymentPage from './page/paymentPage';
 import PrivateRoutes from './page/routes/privateRoutes';
+import SignUp from './page/Registration/SignUp';
 
 
 
@@ -35,6 +36,7 @@ function App() {
   <Route path='/about' element={<About />} />
   <Route path='/contact' element= {<ContactPages />} />
   <Route path='/login' element={<LoginPage />} />
+  <Route path='/registration' element={<SignUp />} />
   <Route path='/payment' element={<PrivateRoutes>
     <PaymentPage/>
   </PrivateRoutes>}/>

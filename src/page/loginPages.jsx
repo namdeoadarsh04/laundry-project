@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import "./login.css"
-import { ToastContainer,toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
 const LoginPage = () => {
@@ -20,32 +20,32 @@ const LoginPage = () => {
 
     async function Log(e) {
         e.preventDefault()
-        try{
-        let res = await fetch("http://localhost:8082/api/v1/admin/login", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        })
-        res = await res.json()
-        if (res.status) {
-            localStorage.setItem('user', res.data.token)
-            navigate("/payment")
-        }else{
-            toast(res?.msg,{
-                type:"error",
-                position:"top-center",
-                autoClose:2000
+        try {
+            let res = await fetch("http://localhost:8082/api/v1/admin/login", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            })
+            res = await res.json()
+            if (res.status) {
+                localStorage.setItem('user', res.data.token)
+                navigate("/payment")
+            } else {
+                toast(res?.msg, {
+                    type: "error",
+                    position: "top-center",
+                    autoClose: 2000
+                })
+            }
+        } catch (e) {
+            toast(e.message, {
+                type: "error",
+                position: "top-center",
+                autoClose: 2000
             })
         }
-    }catch(e){
-        toast(e.message,{
-            type:"error",
-            position:"top-center",
-            autoClose:2000
-        })
-    }
 
     }
 
@@ -54,42 +54,38 @@ const LoginPage = () => {
         localStorage.removeItem('user')
     }, [])
     return (
-        <>
-            <form onSubmit={Log} >
-                <div className="imgcontainer">
-                    <img src="img_avatar2.png" alt="Avatar" className="avatar" />
-                </div>
-                <div className="container">
-                    <label htmlFor="uname">
-                        <b>Username</b>
-                    </label>
-                    <input type="text" placeholder="Enter Username" name="email" onChange={getInput} required />
-                    <label htmlFor="psw">
-                        <b>Password</b>
-                    </label>
-                    <input
-                        type="password"
-                        placeholder="Enter Password"
-                        name="password"
-                        onChange={getInput}
-                        required
-                    />
-                    <button type="submit">Login</button>
-                    <label>
-                        <input type="checkbox" defaultChecked="checked" name="remember" />{" "}
-                        Remember me
-                    </label>
-                </div>
-                {/* <div className="container" style={{ backgroundColor: "#f1f1f1" }}>
-                    <button type="button" className="cancelbtn">
-                        Cancel
-                    </button>
-                    <span className="psw">
-                        Forgot <a href="#">password?</a>
-                    </span>
-                </div> */}
-            </form>
-            <ToastContainer />
+    <>
+   <div class="wrapper">
+         <div class="title">
+            Login Form
+         </div>
+         <form action="#">
+            <div class="field">
+               <input type="text" required/>
+               <label>Email Address</label>
+            </div>
+            <div class="field">
+               <input type="password" required/>
+               <label>Password</label>
+            </div>
+            <div class="content">
+               <div class="checkbox">
+                  <input type="checkbox" id="remember-me"/>
+                  <label for="remember-me">Remember me</label>
+               </div>
+               <div class="pass-link">
+                  <a href="#">Forgot password?</a>
+               </div>
+            </div>
+            <div class="field">
+               <input type="submit" value="Login"/>
+            </div>
+            <div class="signup-link">
+               Not a member? <a href="#">Signup now</a>
+            </div>
+         </form>
+      </div>
+      <ToastContainer />
         </>
     )
 }

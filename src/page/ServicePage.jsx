@@ -33,7 +33,7 @@ const Service = () => {
           >
             <div
               className="d-inline-flex align-items-center justify-content-center bg-white shadow rounded-circle mb-4"
-              style={{ width: 100, height: 100 }}
+              style={{ width: 120, height: 100 }}
             >
               <i className="fas fa-3x fa-soap text-secondary" />
             </div>
